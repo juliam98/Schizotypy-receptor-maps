@@ -9,9 +9,11 @@ CBF_dir=os.path.join(main_folder, '1_data', 'CBF_files/')
 outpath=os.path.join(main_folder, '3_results', '3.1_parcellations/')
 
 CBF_files = [
-    'CBF_threshold_1_no_covariates', # no covariates
-    'CBF_threshold_1_age_sex_coffee_cigs', # all 4 covariates: age, sex, coffee, cigarettes
-    'Difference_map'
+    'CBF_threshold_1_no_covariates', # HS>LS no covariates
+    'CBF_threshold_1_age_sex_coffee_cigs', # HS>LS all 4 covariates: age, sex, coffee, cigarettes
+    'O-LIFE-IA_con_0001', # O-LIFE-IA regression
+    'O-LIFE-UE_con_0001', # O-LIFE-UE regression
+    'O-LIFE-CD_con_0001' # O-LIFE-CD regression
 ]
 
 import numpy as np

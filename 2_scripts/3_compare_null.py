@@ -26,7 +26,9 @@ atlas_paths = [os.path.join(Parcellations_dir, (atlas_names[a])+'.txt') for a in
 CBF_file_names = [ # names of CBF files
     'CBF_threshold_1_no_covariates', # no covariates
     'CBF_threshold_1_age_sex_coffee_cigs', # all 4 covariates: age, sex, coffee, cigarettes
-    'Difference_map'
+    'O-LIFE-IA_con_0001', # O-LIFE-IA regression
+    'O-LIFE-UE_con_0001', # O-LIFE-UE regression
+    'O-LIFE-CD_con_0001' # O-LIFE-CD regression
 ]
 # full CBF null files paths
 CBF_null_paths = [os.path.join(nullpath, 'nulls_'+(CBF_file_names[a])+'_122.npy') for a in range(len(CBF_file_names))]
