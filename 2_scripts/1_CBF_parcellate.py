@@ -1,6 +1,3 @@
-"""
-Parcellate volumetric PET images
-"""
 import pandas as pd
 import os
 

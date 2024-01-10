@@ -1,19 +1,8 @@
 from timeit import default_timer as timer
 import os
-import time
+from inquirer import List, prompt
 import numpy as np
 from neuromaps.nulls import burt2020
-
-start = timer()
-print("Generating nulls")
-
-main_folder='/Users/juliamarcinkowska/Desktop/MSc_THESIS/DataAnalysis/emorisk_2/'
-CBF_dir=os.path.join(main_folder, '3_results', '3.1_parcellations/')
-outpath=os.path.join(main_folder, '3_results', '3.2_nulls/')
-
-scale = '122'
-
-schaefer = main_folder+'1_data/Parcellation_atlas/Schaefer2018_100Parcels_7Networks_Xiao_2019_SubCorSeg_resampled_asl.nii'
 
 CBF_file_names = [ # names of CBF files
     'CBF_no_cov', # no covariates
@@ -24,14 +13,39 @@ CBF_file_names = [ # names of CBF files
     'O-LIFE-CD-con_0001' # O-LIFE-CD regression
 ]
 
-CBF_parcellated_map1 = np.loadtxt(fname=os.path.join(CBF_dir,CBF_file_names[0]+'.txt'))
-CBF_parcellated_map2 = np.loadtxt(fname=os.path.join(CBF_dir,CBF_file_names[1]+'.txt'))
+# Nulls take about 20 minutes to generate, so instead of looping through all 6 files at once, the next line 
+# will ask the user for input on which nulls to generate on this run of the code
 
-# # Generate nulls with brainsmash burt2020
-nulls1 = burt2020(data=CBF_parcellated_map2, atlas='MNI152', density='2mm',
-                       n_perm=5000, seed=1212, parcellation=schaefer)
+which_CBF_nulls = [List('CBF_choice',
+                        message="Which nulls would you like to generate?",
+                        choices=CBF_file_names)]
+answers = prompt(which_CBF_nulls) # prompt the user to select one of the CBF maps
 
-np.save(outpath+'nulls_'+CBF_file_names[1]+'_'+scale+'.npy', nulls1)
+CBF_null = answers['CBF_choice'] # save the answer here as the name of the file chosen
+
+start = timer()
+print(f"Generating nulls for {CBF_null}. Please wait...")
+
+# File paths
+main_folder='/Users/juliamarcinkowska/Desktop/MSc_THESIS/DataAnalysis/emorisk_2/'
+CBF_dir=os.path.join(main_folder, '3_results', '3.1_parcellations/')
+outpath=os.path.join(main_folder, '3_results', '3.2_nulls/')
+
+# Null settings
+scale = '122'
+seed = 1212
+
+# Parcellation atlas
+schaefer = main_folder+'1_data/Parcellation_atlas/Schaefer2018_100Parcels_7Networks_Xiao_2019_SubCorSeg_resampled_asl.nii'
+
+# Load the parcellated CBF map from txt file
+CBF_parcellated_map = np.loadtxt(fname=os.path.join(CBF_dir,CBF_null+'.txt'))
+
+# Generate nulls with brainsmash burt2020
+nulls = burt2020(data=CBF_parcellated_map, atlas='MNI152', density='2mm',
+                       n_perm=5000, seed=seed, parcellation=schaefer)
+
+np.save(outpath+'nulls_'+CBF_null+'_'+scale+'.npy', nulls)
 
 end = timer()
 runtime=round(end-start, 2)
