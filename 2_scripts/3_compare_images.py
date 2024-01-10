@@ -50,13 +50,14 @@ for CBF_map in CBF_parcellated_paths:
     CBF_index = CBF_parcellated_paths.index(CBF_map) # get current number of iteration 
     print(f'Calculating correlations of {CBF_file_names[CBF_index]} with each atlas...')
     CBF_data=np.loadtxt(CBF_map)
+    nulls=np.load(CBF_null_paths[CBF_index])
     for parcellated_atlas in atlas_paths:
         # DATA
         iteration = atlas_paths.index(parcellated_atlas) # get current number of ieration 
         map_name = atlas_names[iteration] # get the filename from atlas_names list using iteration as index
         atlas = np.loadtxt(parcellated_atlas) # load parcellated receptor atlas values
         # CALCULATE CORRELATIONS
-        corr, pval = stats.compare_images(CBF_data, atlas, metric='spearmanr', nulls=nulls_CBF_threshold_1_no_covariates)
+        corr, pval = stats.compare_images(CBF_data, atlas, metric='spearmanr', nulls=nulls)
         # ADD RESULTS TO THE DF
         results.at[map_name, 'corr'] = round(corr,4)
         results.at[map_name, 'pval'] = round(pval,4)

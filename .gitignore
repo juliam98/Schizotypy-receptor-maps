@@ -4,6 +4,7 @@
 1_data/Parcellation_atlas/.DS_Store
 1_data/CBF_files/.DS_Store
 2_scripts/.DS_Store
+2_scripts/4_multiple_comparisons.py
 3_results/.DS_Store
 3_results/3.1_parcellations/.DS_Store
 3_results/3.2_nulls/.DS_Store
