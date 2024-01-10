@@ -24,12 +24,14 @@ atlas_names = [ # names of receptor atlas files
 atlas_paths = [os.path.join(Parcellations_dir, (atlas_names[a])+'.txt') for a in range(len(atlas_names))]
 
 CBF_file_names = [ # names of CBF files
-    'CBF_threshold_1_no_covariates', # no covariates
-    'CBF_threshold_1_age_sex_coffee_cigs', # all 4 covariates: age, sex, coffee, cigarettes
-    'O-LIFE-IA_con_0001', # O-LIFE-IA regression
-    'O-LIFE-UE_con_0001', # O-LIFE-UE regression
-    'O-LIFE-CD_con_0001' # O-LIFE-CD regression
+    'CBF_no_cov', # no covariates
+    'CBF_cov_age_gender', # 2 covariates: age, sex
+    'CBF_cov_age_gender_caffeine_nicotine', # all 4 covariates: age, sex, coffee, cigarettes
+    'O-LIFE-UE-con_0001', # O-LIFE-UE regression
+    'O-LIFE-IA-con_0001', # O-LIFE-IA regression
+    'O-LIFE-CD-con_0001' # O-LIFE-CD regression
 ]
+
 # full CBF null files paths
 CBF_null_paths = [os.path.join(nullpath, 'nulls_'+(CBF_file_names[a])+'_122.npy') for a in range(len(CBF_file_names))]
 CBF_parcellated_paths = [os.path.join(Parcellations_dir, (CBF_file_names[a])+'.txt') for a in range(len(CBF_file_names))]
