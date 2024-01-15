@@ -8,9 +8,9 @@ CBF_file_names = [ # names of CBF files
     'CBF_no_cov', # no covariates
     'CBF_cov_age_gender', # 2 covariates: age, sex
     'CBF_cov_age_gender_caffeine_nicotine', # all 4 covariates: age, sex, coffee, cigarettes
-    'O-LIFE-UE-con_0001', # O-LIFE-UE regression
-    'O-LIFE-IA-con_0001', # O-LIFE-IA regression
-    'O-LIFE-CD-con_0001' # O-LIFE-CD regression
+    'O-LIFE-UE', # O-LIFE-UE regression
+    'O-LIFE-IA', # O-LIFE-IA regression
+    'O-LIFE-CD' # O-LIFE-CD regression
 ]
 
 # Nulls take about 20 minutes to generate, so instead of looping through all 6 files at once, the next line 
