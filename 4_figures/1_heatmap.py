@@ -1,5 +1,6 @@
 import pandas as pd
 import os
+import numpy as np
 
 main_folder='/Users/juliamarcinkowska/Desktop/MSc_THESIS/DataAnalysis/emorisk_2/'
 corr_dir=os.path.join(main_folder, '3_results', '3.3_correlations')
@@ -36,27 +37,47 @@ all_corrs.index = CBF_file_names
 all_pvals = pd.read_csv(corr_dir+'/all_p_values_bonferroni.csv', index_col='atlas')
 asterisk = all_pvals.mask(all_pvals, '*')
 asterisk = asterisk.replace(False, ' ')
-print(asterisk)
-# asterisk = all_pvals.where(all_pvals is False, ' ')
-# print(asterisk)
 
 # DATA VISUALISATION
 import seaborn as sns
 import matplotlib.pyplot as plt
+from matplotlib import rc
+rc('text')
 
+# Transparent background for figures
+plt.rcParams.update({
+    "savefig.facecolor": (1.0, 1.0, 1.0, 0.0), 
+})
+
+# Labels for the heatmap- y axis
 CBF_labels = [ # names of CBF files
-    'CBF_no_cov', # no covariates
-    'CBF_cov_2', # 2 covariates: age, sex
-    'CBF_cov_4', # all 4 covariates: age, sex, coffee, cigarettes
-    'O-LIFE-UE', # O-LIFE-UE regression
-    'O-LIFE-IA', # O-LIFE-IA regression
-    'O-LIFE-CD' # O-LIFE-CD regression
+    'HS>LS no cov', # no covariates
+    'HS>LS 2 cov', # 2 covariates: age, sex
+    'HS>LS 4 cov', # all 4 covariates: age, sex, coffee, cigarettes
+    'O-LIFE UE', # O-LIFE-UE regression
+    'O-LIFE IA', # O-LIFE-IA regression
+    'O-LIFE CD' # O-LIFE-CD regression
 ]
 
-cmap=sns.color_palette("vlag", as_cmap=True)
-heatmap = sns.heatmap(all_corrs, cmap=cmap, center=0, xticklabels=receptor_names, yticklabels=CBF_labels, annot=asterisk, fmt='', square=True)
-heatmap.set(xlabel="", ylabel="", title="Heatmap of spearman's correlations")
-plt.tight_layout()
+# Round correlation values to annotate the heatmap
+corr_labels = np.round(all_corrs,2)
+# create dataframe of zeros to use for annotating the heatmap without affecting the colour
+map_zeroes = pd.DataFrame(np.zeros((6, 8)))
 
+# Define figure size
+plt.figure(figsize=(10,6))
+# Define the colour palette
+cmap=sns.color_palette("coolwarm", as_cmap=True)
+
+# First heatmap is the transparent/ no-colour heatmap containing just the annotations of correlation coefficients
+heatmap_values = sns.heatmap(map_zeroes, cmap=None, annot_kws={'va':'top', 'fontsize':'medium'}, annot=corr_labels, square=True, cbar=False)
+# The second heatmap is the main one, colour based on strength of correlations, while annotations are based on p_values (* if significant after Bonferroni)
+heatmap_main = sns.heatmap(all_corrs, cmap=cmap, center=0, xticklabels=receptor_names, yticklabels=CBF_labels, annot_kws={'va':'bottom', 'fontsize':'large'}, annot=asterisk, fmt='', square=True)
+# Set labels/title
+heatmap_main.set(xlabel="", ylabel="", title="Heatmap of spearman's correlations")
+# Rotate labels on x axis by 45 degrees
+plt.xticks(rotation=45, ha="right")
+# Fit all labels within the figure
+plt.tight_layout()
 # plt.show()
 plt.savefig(main_folder+'4_figures/heatmap.png', dpi=350)
