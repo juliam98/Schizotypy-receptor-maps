@@ -17,7 +17,7 @@ Six publically-available receptor density/ molecular atlases were used to correl
 
 ### Data analysis steps:
 <br>
-<img src="https://github.com/juliam98/Schizotypy-receptor-maps/assets/93785710/aae92674-220f-4d5a-b4d3-3b4d5c136414"  width="800">
+<img src="https://github.com/juliam98/Schizotypy-receptor-maps/assets/93785710/fa04a29e-7095-4694-8366-dcca86e601c8"  width="800">
 <br>
 
 <br>The numbering of the steps below corresponds to numbers in the names of python files: <br>
