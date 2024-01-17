@@ -68,4 +68,10 @@ for CBF_map in CBF_parcellated_paths:
             results.at[map_name, 'sign?'] = 'N'
     print(results)
     results.to_csv(os.path.join(outpath, CBF_file_names[CBF_index]+'_correlations.csv'),index_label='Atlas')
-    time.sleep(1)
+    file = open(main_folder+'4_figures/README.md', "a")
+    file.write("\n\n")
+    file.write(CBF_file_names[CBF_index])
+    file.write("\n")
+    results.to_markdown(file, mode='at', **{'tablefmt':"github"})
+    file.close()
+    time.sleep(0.1)
