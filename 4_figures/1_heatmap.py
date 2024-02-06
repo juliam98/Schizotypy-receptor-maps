@@ -2,13 +2,13 @@ import pandas as pd
 import os
 import numpy as np
 
-main_folder='/Users/juliamarcinkowska/Desktop/MSc_THESIS/DataAnalysis/emorisk_2/'
+main_folder=os.getcwd()
 corr_dir=os.path.join(main_folder, '3_results', '3.3_correlations')
 
 CBF_file_names = [ # names of CBF files
     'CBF_no_cov', # no covariates
-    'CBF_cov_age_gender', # 2 covariates: age, sex
-    'CBF_cov_age_gender_caffeine_nicotine', # all 4 covariates: age, sex, coffee, cigarettes
+    # 'CBF_cov_age_gender', # 2 covariates: age, sex
+    # 'CBF_cov_age_gender_caffeine_nicotine', # all 4 covariates: age, sex, coffee, cigarettes
     'O-LIFE-UE', # O-LIFE-UE regression
     'O-LIFE-IA', # O-LIFE-IA regression
     'O-LIFE-CD' # O-LIFE-CD regression
@@ -52,8 +52,8 @@ plt.rcParams.update({
 # Labels for the heatmap- y axis
 CBF_labels = [ # names of CBF files
     'HS>LS no cov', # no covariates
-    'HS>LS 2 cov', # 2 covariates: age, sex
-    'HS>LS 4 cov', # all 4 covariates: age, sex, coffee, cigarettes
+    # 'HS>LS 2 cov', # 2 covariates: age, sex
+    # 'HS>LS 4 cov', # all 4 covariates: age, sex, coffee, cigarettes
     'O-LIFE UE', # O-LIFE-UE regression
     'O-LIFE IA', # O-LIFE-IA regression
     'O-LIFE CD' # O-LIFE-CD regression
@@ -62,7 +62,7 @@ CBF_labels = [ # names of CBF files
 # Round correlation values to annotate the heatmap
 corr_labels = np.round(all_corrs,2)
 # create dataframe of zeros to use for annotating the heatmap without affecting the colour
-map_zeroes = pd.DataFrame(np.zeros((6, 8)))
+map_zeroes = pd.DataFrame(np.zeros((4, 8)))
 
 # Define figure size
 plt.figure(figsize=(10,6))
@@ -70,9 +70,9 @@ plt.figure(figsize=(10,6))
 cmap=sns.color_palette("coolwarm", as_cmap=True)
 
 # First heatmap is the transparent/ no-colour heatmap containing just the annotations of correlation coefficients
-heatmap_values = sns.heatmap(map_zeroes, cmap=None, annot_kws={'va':'top', 'fontsize':'medium'}, annot=corr_labels, square=True, cbar=False)
+heatmap_values = sns.heatmap(map_zeroes, cmap=None, annot_kws={'va':'top', 'fontsize':'medium'}, annot=corr_labels, square=False, cbar=False)
 # The second heatmap is the main one, colour based on strength of correlations, while annotations are based on p_values (* if significant after Bonferroni)
-heatmap_main = sns.heatmap(all_corrs, cmap=cmap, center=0, xticklabels=receptor_names, yticklabels=CBF_labels, annot_kws={'va':'bottom', 'fontsize':'large'}, annot=asterisk, fmt='', square=True)
+heatmap_main = sns.heatmap(all_corrs, cmap=cmap, center=0, xticklabels=receptor_names, yticklabels=CBF_labels, annot_kws={'va':'bottom', 'fontsize':'large'}, annot=asterisk, fmt='', square=False)
 # Set labels/title
 heatmap_main.set(xlabel="", ylabel="", title="Heatmap of spearman's correlations")
 # Rotate labels on x axis by 45 degrees
@@ -80,4 +80,4 @@ plt.xticks(rotation=45, ha="right")
 # Fit all labels within the figure
 plt.tight_layout()
 # plt.show()
-plt.savefig(main_folder+'4_figures/heatmap.png', dpi=350)
+plt.savefig(main_folder+'/4_figures/heatmap.png', dpi=350)
