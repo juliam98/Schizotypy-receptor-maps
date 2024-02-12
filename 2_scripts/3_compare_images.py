@@ -4,11 +4,11 @@ import time
 import numpy as np
 import pandas as pd
 
-main_folder='/Users/juliamarcinkowska/Desktop/MSc_THESIS/DataAnalysis/emorisk_2/'
-Parcellations_dir=os.path.join(main_folder, '3_results', '3.1_parcellations/')
+main_folder=os.getcwd()
+Parcellations_dir=os.path.join(main_folder, '3_output', '3.1_parcellations/')
 PET_dir=os.path.join(main_folder, '1_data', 'PET_maps/')
-nullpath=os.path.join(main_folder, '3_results', '3.2_nulls')
-outpath=os.path.join(main_folder, '3_results', '3.3_correlations')
+nullpath=os.path.join(main_folder, '3_output', '3.2_nulls')
+outpath=os.path.join(main_folder, '3_output', '3.3_correlations')
 
 atlas_names = [ # names of receptor atlas files
     'D1_sch23390_kaller2017', #D1
@@ -17,8 +17,7 @@ atlas_names = [ # names of receptor atlas files
     'GABAa5_Ro15_10hc_lukow', #GABAa5
     'GABAbz_flumazenil_norgaard2021', #GABAbz
     'mGluRR5_abp688_smart2019', # mGluR5
-    'NMDA_ge179_galovic2021', # NMDA
-    'SV2A_ucbj_finnema2016' # SV2A
+    'NMDA_ge179_galovic2021' # NMDA
 ]
 # full receptor atlas paths
 atlas_paths = [os.path.join(Parcellations_dir, (atlas_names[a])+'.txt') for a in range(len(atlas_names))]
@@ -68,7 +67,7 @@ for CBF_map in CBF_parcellated_paths:
             results.at[map_name, 'sign?'] = 'N'
     print(results)
     results.to_csv(os.path.join(outpath, CBF_file_names[CBF_index]+'_correlations.csv'),index_label='Atlas')
-    file = open(main_folder+'4_figures/README.md', "a")
+    file = open(os.path.join(main_folder,'5_results','README.md'), "a")
     file.write("\n\n")
     file.write(CBF_file_names[CBF_index])
     file.write("\n")

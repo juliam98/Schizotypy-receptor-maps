@@ -3,7 +3,7 @@ import os
 import numpy as np
 
 main_folder=os.getcwd()
-corr_dir=os.path.join(main_folder, '3_results', '3.3_correlations')
+corr_dir=os.path.join(main_folder, '3_output', '3.3_correlations')
 
 CBF_file_names = [ # names of CBF files
     'CBF_no_cov', # no covariates
@@ -21,8 +21,7 @@ atlas_names = [ # names of receptor atlas files
     'GABAa5_Ro15_10hc_lukow', #GABAa5
     'GABAbz_flumazenil_norgaard2021', #GABAbz
     'mGluRR5_abp688_smart2019', # mGluR5
-    'NMDA_ge179_galovic2021', # NMDA
-    'SV2A_ucbj_finnema2016' # SV2A
+    'NMDA_ge179_galovic2021' # NMDA
 ]
 
 # full CBF files paths
@@ -51,7 +50,7 @@ plt.rcParams.update({
 
 # Labels for the heatmap- y axis
 CBF_labels = [ # names of CBF files
-    'HS>LS no cov', # no covariates
+    # 'HS>LS no cov', # no covariates
     # 'HS>LS 2 cov', # 2 covariates: age, sex
     # 'HS>LS 4 cov', # all 4 covariates: age, sex, coffee, cigarettes
     'O-LIFE UE', # O-LIFE-UE regression
@@ -62,7 +61,7 @@ CBF_labels = [ # names of CBF files
 # Round correlation values to annotate the heatmap
 corr_labels = np.round(all_corrs,2)
 # create dataframe of zeros to use for annotating the heatmap without affecting the colour
-map_zeroes = pd.DataFrame(np.zeros((4, 8)))
+map_zeroes = pd.DataFrame(np.zeros((4, 7)))
 
 # Define figure size
 plt.figure(figsize=(10,6))

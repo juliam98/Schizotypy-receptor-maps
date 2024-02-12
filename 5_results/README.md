@@ -1,6 +1,6 @@
 # Heatmap of Spearman's ρ correlations
 
-<img src="heatmap.png"/>
+<img src="4_figures/heatmap.png"/>
 
 Asterisk denotes correlations that were statistically significant following Bonferroni correction.
 
@@ -16,7 +16,6 @@ CBF_no_cov
 | GABAbz_flumazenil_norgaard2021 | -0.1433 | 0.5591 | N       |
 | mGluRR5_abp688_smart2019       | -0.1907 | 0.0616 | N       |
 | NMDA_ge179_galovic2021         |  0.0557 | 0.778  | N       |
-| SV2A_ucbj_finnema2016          |  0.0777 | 0.4633 | N       |
 
 CBF_cov_age_gender
 |                                |    corr |   pval | sign?   |
@@ -28,7 +27,6 @@ CBF_cov_age_gender
 | GABAbz_flumazenil_norgaard2021 | -0.1431 | 0.5585 | N       |
 | mGluRR5_abp688_smart2019       | -0.1892 | 0.0638 | N       |
 | NMDA_ge179_galovic2021         |  0.0581 | 0.7688 | N       |
-| SV2A_ucbj_finnema2016          |  0.0777 | 0.4629 | N       |
 
 CBF_cov_age_gender_caffeine_nicotine
 |                                |    corr |   pval | sign?   |
@@ -40,7 +38,6 @@ CBF_cov_age_gender_caffeine_nicotine
 | GABAbz_flumazenil_norgaard2021 | -0.1982 | 0.3303 | N       |
 | mGluRR5_abp688_smart2019       | -0.1215 | 0.225  | N       |
 | NMDA_ge179_galovic2021         |  0.0267 | 0.882  | N       |
-| SV2A_ucbj_finnema2016          |  0.1219 | 0.2202 | N       |
 
 O-LIFE-UE
 |                                |    corr |   pval | sign?   |
@@ -52,7 +49,6 @@ O-LIFE-UE
 | GABAbz_flumazenil_norgaard2021 | -0.1937 | 0.4027 | N       |
 | mGluRR5_abp688_smart2019       | -0.185  | 0.1096 | N       |
 | NMDA_ge179_galovic2021         |  0.2857 | 0.1158 | N       |
-| SV2A_ucbj_finnema2016          | -0.0131 | 0.9142 | N       |
 
 O-LIFE-IA
 |                                |    corr |   pval | sign?   |
@@ -64,7 +60,6 @@ O-LIFE-IA
 | GABAbz_flumazenil_norgaard2021 |  0.081  | 0.763  | N       |
 | mGluRR5_abp688_smart2019       | -0.0222 | 0.8506 | N       |
 | NMDA_ge179_galovic2021         |  0.4699 | 0.0022 | Y       |
-| SV2A_ucbj_finnema2016          | -0.0398 | 0.759  | N       |
 
 O-LIFE-CD
 |                                |    corr |   pval | sign?   |
@@ -76,4 +71,3 @@ O-LIFE-CD
 | GABAbz_flumazenil_norgaard2021 | -0.0996 | 0.6777 | N       |
 | mGluRR5_abp688_smart2019       |  0.0764 | 0.5671 | N       |
 | NMDA_ge179_galovic2021         |  0.508  | 0.0004 | Y       |
-| SV2A_ucbj_finnema2016          |  0.0474 | 0.7185 | N       |
