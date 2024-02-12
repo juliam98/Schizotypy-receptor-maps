@@ -41,7 +41,10 @@ asterisk = asterisk.replace(False, ' ')
 import seaborn as sns
 import matplotlib.pyplot as plt
 from matplotlib import rc
+from matplotlib.font_manager import FontProperties
 rc('text')
+font = FontProperties()
+font.set_size('x-large')
 
 # Transparent background for figures
 plt.rcParams.update({
@@ -50,9 +53,7 @@ plt.rcParams.update({
 
 # Labels for the heatmap- y axis
 CBF_labels = [ # names of CBF files
-    # 'HS>LS no cov', # no covariates
-    # 'HS>LS 2 cov', # 2 covariates: age, sex
-    # 'HS>LS 4 cov', # all 4 covariates: age, sex, coffee, cigarettes
+    'HS>LS', # no covariates
     'O-LIFE UE', # O-LIFE-UE regression
     'O-LIFE IA', # O-LIFE-IA regression
     'O-LIFE CD' # O-LIFE-CD regression
@@ -69,11 +70,16 @@ plt.figure(figsize=(10,6))
 cmap=sns.color_palette("coolwarm", as_cmap=True)
 
 # First heatmap is the transparent/ no-colour heatmap containing just the annotations of correlation coefficients
-heatmap_values = sns.heatmap(map_zeroes, cmap=None, annot_kws={'va':'top', 'fontsize':'medium'}, annot=corr_labels, square=False, cbar=False)
+heatmap_values = sns.heatmap(map_zeroes, cmap=None, annot_kws={'va':'top','fontsize':'x-large'}, annot=corr_labels, square=False, cbar=False)
+
 # The second heatmap is the main one, colour based on strength of correlations, while annotations are based on p_values (* if significant after Bonferroni)
-heatmap_main = sns.heatmap(all_corrs, cmap=cmap, center=0, xticklabels=receptor_names, yticklabels=CBF_labels, annot_kws={'va':'bottom', 'fontsize':'large'}, annot=asterisk, fmt='', square=False)
+heatmap_main = sns.heatmap(all_corrs, cmap=cmap, center=0, annot_kws={'va':'bottom', 'fontsize':'large'}, annot=asterisk, fmt='', square=False)
+
 # Set labels/title
-heatmap_main.set(xlabel="", ylabel="", title="Heatmap of spearman's correlations")
+heatmap_main.set(xlabel="", ylabel="")
+heatmap_main.set_title(label="Heatmap of spearman's correlations",fontproperties=font)
+heatmap_main.set_xticklabels(labels=receptor_names,fontproperties=font)
+heatmap_main.set_yticklabels(labels=CBF_labels,fontproperties=font)
 # Rotate labels on x axis by 45 degrees
 plt.xticks(rotation=45, ha="right")
 # Fit all labels within the figure
