@@ -5,10 +5,11 @@ main_folder=os.getcwd()
 PET_dir=os.path.join(main_folder, '1_data', 'PET_maps/')
 outpath=os.path.join(main_folder, '3_output', '3.1_parcellations/')
 
-atlas_names = [
+atlas_names = [ # names of receptor atlas files
     'D1_sch23390_kaller2017', #D1
     'D2_fallypride_jaworska2020', # D2
     'DAT_fpcit_dukart2018', #DAT
+    'FDOPA_fluorodopa_hc12_gomez', #FDOPA
     'GABAa5_Ro15_10hc_lukow', #GABAa5
     'GABAbz_flumazenil_norgaard2021', #GABAbz
     'mGluRR5_abp688_smart2019', # mGluR5
@@ -20,7 +21,7 @@ from neuromaps.parcellate import Parcellater
 
 # scale = 'scale100'
 
-schaefer = main_folder+'/1_data/Parcellation_atlas/Schaefer2018_100Parcels_7Networks_Xiao_2019_SubCorSeg_resampled_asl.nii'
+schaefer = os.path.join(main_folder, '1_data', 'Parcellation_atlas/', 'Schaefer2018_100Parcels_7Networks_Xiao_2019_SubCorSeg_resampled_asl.nii')
 
 parcellated = {}
 parcellater = Parcellater(schaefer, 'MNI152')

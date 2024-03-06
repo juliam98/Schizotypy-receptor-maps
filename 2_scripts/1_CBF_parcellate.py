@@ -1,9 +1,9 @@
 import pandas as pd
 import os
 
-main_folder='/Users/juliamarcinkowska/Desktop/MSc_THESIS/DataAnalysis/emorisk_2/'
+main_folder=os.getcwd()
 CBF_dir=os.path.join(main_folder, '1_data', 'CBF_files/')
-outpath=os.path.join(main_folder, '3_results', '3.1_parcellations/')
+outpath=os.path.join(main_folder, '3_output', '3.1_parcellations/')
 
 CBF_file_names = [ # names of CBF files
     'CBF_no_cov', # no covariates
@@ -11,7 +11,10 @@ CBF_file_names = [ # names of CBF files
     'CBF_cov_age_gender_caffeine_nicotine', # all 4 covariates: age, sex, coffee, cigarettes
     'O-LIFE-UE', # O-LIFE-UE regression
     'O-LIFE-IA', # O-LIFE-IA regression
-    'O-LIFE-CD' # O-LIFE-CD regression
+    'O-LIFE-CD', # O-LIFE-CD regression
+    'O-LIFE-UE-covars', # O-LIFE-UE regression with covariates
+    'O-LIFE-IA-covars', # O-LIFE-IA regression with covariates
+    'O-LIFE-CD-covars', # O-LIFE-CD regression with covariates
 ]
 
 import numpy as np
@@ -19,7 +22,7 @@ from neuromaps.parcellate import Parcellater
 
 # scale = 'scale100'
 
-schaefer = main_folder+'1_data/Parcellation_atlas/Schaefer2018_100Parcels_7Networks_Xiao_2019_SubCorSeg_resampled_asl.nii'
+schaefer = os.path.join(main_folder, '1_data', 'Parcellation_atlas/', 'Schaefer2018_100Parcels_7Networks_Xiao_2019_SubCorSeg_resampled_asl.nii')
 
 parcellated = {}
 parcellater = Parcellater(schaefer, 'MNI152')

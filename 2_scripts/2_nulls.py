@@ -10,7 +10,10 @@ CBF_file_names = [ # names of CBF files
     'CBF_cov_age_gender_caffeine_nicotine', # all 4 covariates: age, sex, coffee, cigarettes
     'O-LIFE-UE', # O-LIFE-UE regression
     'O-LIFE-IA', # O-LIFE-IA regression
-    'O-LIFE-CD' # O-LIFE-CD regression
+    'O-LIFE-CD', # O-LIFE-CD regression
+    'O-LIFE-UE-covars', # O-LIFE-UE regression with covariates
+    'O-LIFE-IA-covars', # O-LIFE-IA regression with covariates
+    'O-LIFE-CD-covars', # O-LIFE-CD regression with covariates
 ]
 
 # Nulls take about 20 minutes to generate, so instead of looping through all 6 files at once, the next line 
@@ -27,16 +30,16 @@ start = timer()
 print(f"Generating nulls for {CBF_null}. Please wait...")
 
 # File paths
-main_folder='/Users/juliamarcinkowska/Desktop/MSc_THESIS/DataAnalysis/emorisk_2/'
-CBF_dir=os.path.join(main_folder, '3_results', '3.1_parcellations/')
-outpath=os.path.join(main_folder, '3_results', '3.2_nulls/')
+main_folder=os.getcwd()
+CBF_dir=os.path.join(main_folder, '3_output', '3.1_parcellations/')
+outpath=os.path.join(main_folder, '3_output', '3.2_nulls/')
 
 # Null settings
 scale = '122'
 seed = 1212
 
 # Parcellation atlas
-schaefer = main_folder+'1_data/Parcellation_atlas/Schaefer2018_100Parcels_7Networks_Xiao_2019_SubCorSeg_resampled_asl.nii'
+schaefer = os.path.join(main_folder, '1_data', 'Parcellation_atlas/', 'Schaefer2018_100Parcels_7Networks_Xiao_2019_SubCorSeg_resampled_asl.nii')
 
 # Load the parcellated CBF map from txt file
 CBF_parcellated_map = np.loadtxt(fname=os.path.join(CBF_dir,CBF_null+'.txt'))
