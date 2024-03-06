@@ -36,7 +36,7 @@ corr_2nd_covar = correlations['pval'].loc[Q_2nd_covars]
 # multiple comparisons correction
 correlations.loc[Q_1st, 'p_reject'], correlations.loc[Q_1st, 'pvals_corrected'], dontneedthis, dontneedthat = multipletests(pvals=corr_1st, method='holm', alpha=0.05)
 correlations.loc[Q_2nd, 'p_reject'], correlations.loc[Q_2nd, 'pvals_corrected'], dontneedthis, dontneedthat = multipletests(pvals=corr_2nd, method='holm', alpha=0.05)
-correlations.loc[Q_1st_covars, 'p_reject'], correlations.loc[Q_1st_covars, 'pvals_corrected'], dontneedthis, dontneedthat = multipletests(pvals=corr_1st_covar, method='fdr_bh', alpha=0.05)
+correlations.loc[Q_1st_covars, 'p_reject'], correlations.loc[Q_1st_covars, 'pvals_corrected'], dontneedthis, dontneedthat = multipletests(pvals=corr_1st_covar, method='holm', alpha=0.05)
 correlations.loc[Q_2nd_covars, 'p_reject'], correlations.loc[Q_2nd_covars, 'pvals_corrected'], dontneedthis, dontneedthat = multipletests(pvals=corr_2nd_covar, method='holm', alpha=0.05)
 
 # save to csv file
