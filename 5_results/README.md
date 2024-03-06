@@ -3,6 +3,8 @@
 # Heatmap of Spearman's ρ correlations
 <img src="/4_figures/heatmap_main_comparisons.png"/>
 
+Asterisk denotes correlations that were statistically significant following Bonferroni correction.
+
 # Heatmap of Spearman's ρ correlations with covariates
 <img src="/4_figures/heatmap_covariates_comparisons.png"/>
 
