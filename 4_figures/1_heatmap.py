@@ -51,8 +51,6 @@ bool_signf2 = bool_signf2.replace(False, ' ')
 corr1 = round(df_comparison1['corr'].unstack(1),2)
 corr2 = round(df_comparison2['corr'].unstack(1),2)
 
-print(corr1)
-
 # DATA VISUALISATION
 import seaborn as sns
 import matplotlib.pyplot as plt
@@ -71,9 +69,9 @@ plt.rcParams.update({
 # Labels for the heatmap- y axis
 CBF_labels1 = [ # names of CBF files
     'HS>LS', # no covariates
-    'O-LIFE UE', # O-LIFE-UE regression
-    'O-LIFE IA', # O-LIFE-IA regression
-    'O-LIFE CD' # O-LIFE-CD regression
+    'O-LIFE-UE', # O-LIFE-UE regression
+    'O-LIFE-IA', # O-LIFE-IA regression
+    'O-LIFE-CD' # O-LIFE-CD regression
 ]
 CBF_labels2 = [
     'HS>LS \n(2 cov)',
@@ -90,15 +88,14 @@ map_zeroes2 = pd.DataFrame(np.zeros((len(CBF_files2), len(atlas_names))))
 # Define figure size
 plt.figure(figsize=(10,6))
 # Define the colour palette
-cmap1=sns.color_palette("coolwarm", as_cmap=True)
-cmap2=sns.color_palette("vlag", as_cmap=True)
+cmap=sns.color_palette("RdBu", as_cmap=True)
 
 # HEATMAP 1
 # First heatmap1 is the transparent/ no-colour heatmap containing just the annotations of correlation coefficients
 heatmap_values1 = sns.heatmap(map_zeroes1, cmap=None, annot_kws={'va':'top','fontsize':'x-large'}, annot=corr1, square=False, cbar=False)
 
 # The second heatmap1 is the main one, colour based on strength of correlations, while annotations are based on p_values (* if significant after Bonferroni)
-heatmap_main1 = sns.heatmap(corr1, cmap=cmap1, center=0, annot_kws={'va':'bottom', 'fontsize':'large'}, annot=bool_signf1, fmt='', square=False)
+heatmap_main1 = sns.heatmap(corr1, cmap=cmap, center=0, annot_kws={'va':'bottom', 'fontsize':'large'}, annot=bool_signf1, fmt='', square=False, vmin=-0.7, vmax=0.7)
 
 # Set labels/title
 heatmap_main1.set(xlabel="", ylabel="")
@@ -107,6 +104,7 @@ heatmap_main1.set_xticklabels(labels=receptor_labels,fontproperties=font)
 heatmap_main1.set_yticklabels(labels=CBF_labels1,fontproperties=font)
 # Rotate labels on x axis by 45 degrees
 plt.xticks(rotation=45, ha="right")
+plt.yticks(rotation=0, ha="right")
 # Fit all labels within the figure
 plt.tight_layout()
 # plt.show()
@@ -123,7 +121,7 @@ plt.clf()
 heatmap_values2 = sns.heatmap(map_zeroes2, cmap=None, annot_kws={'va':'top','fontsize':'x-large'}, annot=corr2, square=False, cbar=False)
 
 # The second heatmap2 is the main one, colour based on strength of correlations, while annotations are based on p_values (* if significant after Bonferroni)
-heatmap_main2 = sns.heatmap(corr2, cmap=cmap2, center=0, annot_kws={'va':'bottom', 'fontsize':'large'}, annot=bool_signf2, fmt='', square=False)
+heatmap_main2 = sns.heatmap(corr2, cmap=cmap, center=0, annot_kws={'va':'bottom', 'fontsize':'large'}, annot=bool_signf2, fmt='', square=False, vmin=-0.7, vmax=0.7)
 
 # Set labels/title
 heatmap_main2.set(xlabel="", ylabel="")
