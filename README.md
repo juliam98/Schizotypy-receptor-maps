@@ -11,6 +11,7 @@ Six publically-available receptor density/ molecular atlases were used to correl
 | DAT      | dukart2018   | [<sup>123</sup>I]-FP-CIT   |
 | D2       | jaworska2020 | [<sup>18</sup>F]fallypride |
 | D1       | kaller2017   | [<sup>11</sup>C]-SCH 23390 |
+| FDOPA    | gomez        | [<sup>18</sup>F]-fluorodopa|
 | GABAa    | norgaard2021 | [<sup>11</sup>C]flumazenil |
 | GABAa5   | lukow2022    | [<sup>11</sup>C]Ro15-4513  |
 | mGluR5   | smart2019    | [<sup>11</sup>C]ABP688     |
