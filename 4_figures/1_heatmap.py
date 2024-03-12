@@ -21,9 +21,9 @@ CBF_files2 = [ # names of CBF files
 ]
 
 atlas_names = [ # names of receptor atlas files
-    'D1_sch23390_kaller2017', #D1
-    'D2_fallypride_jaworska2020', # D2
-    'DAT_fpcit_dukart2018', #DAT
+    # 'D1_sch23390_kaller2017', #D1
+    # 'D2_fallypride_jaworska2020', # D2
+    # 'DAT_fpcit_dukart2018', #DAT
     'FDOPA_fluorodopa_hc12_gomez', #FDOPA
     'GABAa5_Ro15_10hc_lukow', #GABAa5
     'GABAbz_flumazenil_norgaard2021', #GABAbz

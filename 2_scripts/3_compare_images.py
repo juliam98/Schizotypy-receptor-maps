@@ -12,9 +12,9 @@ nullpath=os.path.join(main_folder, '3_output', '3.2_nulls')
 outpath=os.path.join(main_folder, '3_output', '3.3_correlations')
 
 atlas_names = [ # names of receptor atlas files
-    'D1_sch23390_kaller2017', #D1
-    'D2_fallypride_jaworska2020', # D2
-    'DAT_fpcit_dukart2018', #DAT
+    # 'D1_sch23390_kaller2017', #D1
+    # 'D2_fallypride_jaworska2020', # D2
+    # 'DAT_fpcit_dukart2018', #DAT
     'FDOPA_fluorodopa_hc12_gomez', #FDOPA
     'GABAa5_Ro15_10hc_lukow', #GABAa5
     'GABAbz_flumazenil_norgaard2021', #GABAbz
@@ -67,9 +67,9 @@ for CBF_idx in range(len(CBF_parcellated_paths)):
         results['pval'].at[CBF_file_names[CBF_idx], atlas_names[atlas_idx]] = round(pval,4)
         # CHECK IF P VALUES ARE SIGNIFICANT
         if pval<=0.05:
-            results['sign?'].at[CBF_file_names[CBF_idx], atlas_names[atlas_idx]] = 'Y'
+            results['sign?'].at[CBF_file_names[CBF_idx], atlas_names[atlas_idx]] = True
         else:
-            results['sign?'].at[CBF_file_names[CBF_idx], atlas_names[atlas_idx]] = 'N'
+            results['sign?'].at[CBF_file_names[CBF_idx], atlas_names[atlas_idx]] = False
     # A nice output for a premium user experience xxx        
     print(f'Finished calculating correlations for {CBF_file_names[CBF_idx]}')
     time.sleep(0.1)
