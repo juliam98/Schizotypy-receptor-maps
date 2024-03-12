@@ -24,11 +24,11 @@ from neuromaps.parcellate import Parcellater
 schaefer = os.path.join(main_folder, '1_data', 'Parcellation_atlas/', 'Schaefer2018_100Parcels_7Networks_Xiao_2019_SubCorSeg_resampled_asl.nii')
 
 parcellated = {}
-parcellater = Parcellater(schaefer, 'MNI152')
+parcellater = Parcellater(parcellation=schaefer, space='MNI152', resampling_target='parcellation')
 
 for PET_atlas in atlas_names:
     atlas_file = os.path.join(PET_dir, PET_atlas+'.nii.gz')
-    parcellated[PET_atlas] = parcellater.fit_transform(atlas_file, 'MNI152', True)
+    parcellated[PET_atlas] = parcellater.fit_transform(data=atlas_file, space='MNI152', ignore_background_data=True)
     np.savetxt(outpath+PET_atlas+'.txt', np.transpose(parcellated[PET_atlas]))
     
 print('Done!')

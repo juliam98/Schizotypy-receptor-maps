@@ -25,10 +25,11 @@ from neuromaps.parcellate import Parcellater
 schaefer = os.path.join(main_folder, '1_data', 'Parcellation_atlas/', 'Schaefer2018_100Parcels_7Networks_Xiao_2019_SubCorSeg_resampled_asl.nii')
 
 parcellated = {}
-parcellater = Parcellater(schaefer, 'MNI152')
+parcellater = Parcellater(parcellation=schaefer, space='MNI152', resampling_target='parcellation')
 for CBF_map in CBF_file_names:
     CBF_path = os.path.join(CBF_dir, CBF_map+'.nii')
-    parcellated[CBF_map] = parcellater.fit_transform(CBF_path, 'MNI152', True)
+    parcellated[CBF_map] = parcellater.fit_transform(data=CBF_path, space='MNI152', ignore_background_data=True)
+    parcellater.fit()
     np.savetxt(os.path.join(outpath,CBF_map+'.txt'), np.transpose(parcellated[CBF_map]))
     
 print('Done!')
