@@ -18,4 +18,4 @@
 - *HS>LS 4 cov*: age, sex, tobacco, caffeine as covariates
 - *O-LIFE-UE, O-LIFE-IA, O-LIFE-CD*: age, sex, tobacco, caffeine as covariates
 
-View detailed results [here](/3_output/3.3_correlations/all_correlations_p_adj.csv).
+# View detailed results [here](/3_output/3.3_correlations/all_correlations_p_adj.csv).
