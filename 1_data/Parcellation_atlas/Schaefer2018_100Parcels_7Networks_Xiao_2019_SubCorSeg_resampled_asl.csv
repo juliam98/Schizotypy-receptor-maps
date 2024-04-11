@@ -1,0 +1,123 @@
+,id,label,hemisphere,structure,scale
+0,1,7Networks_LH_Vis_1,L,cortex,scale122
+1,2,7Networks_LH_Vis_2,L,cortex,scale122
+2,3,7Networks_LH_Vis_3,L,cortex,scale122
+3,4,7Networks_LH_Vis_4,L,cortex,scale122
+4,5,7Networks_LH_Vis_5,L,cortex,scale122
+5,6,7Networks_LH_Vis_6,L,cortex,scale122
+6,7,7Networks_LH_Vis_7,L,cortex,scale122
+7,8,7Networks_LH_Vis_8,L,cortex,scale122
+8,9,7Networks_LH_Vis_9,L,cortex,scale122
+9,10,7Networks_LH_SomMot_1,L,cortex,scale122
+10,11,7Networks_LH_SomMot_2,L,cortex,scale122
+11,12,7Networks_LH_SomMot_3,L,cortex,scale122
+12,13,7Networks_LH_SomMot_4,L,cortex,scale122
+13,14,7Networks_LH_SomMot_5,L,cortex,scale122
+14,15,7Networks_LH_SomMot_6,L,cortex,scale122
+15,16,7Networks_LH_DorsAttn_Post_1,L,cortex,scale122
+16,17,7Networks_LH_DorsAttn_Post_2,L,cortex,scale122
+17,18,7Networks_LH_DorsAttn_Post_3,L,cortex,scale122
+18,19,7Networks_LH_DorsAttn_Post_4,L,cortex,scale122
+19,20,7Networks_LH_DorsAttn_Post_5,L,cortex,scale122
+20,21,7Networks_LH_DorsAttn_Post_6,L,cortex,scale122
+21,22,7Networks_LH_DorsAttn_FEF_1,L,cortex,scale122
+22,23,7Networks_LH_DorsAttn_FEF_2,L,cortex,scale122
+23,24,7Networks_LH_SalVentAttn_ParOper_1,L,cortex,scale122
+24,25,7Networks_LH_SalVentAttn_FrOper_1,L,cortex,scale122
+25,26,7Networks_LH_SalVentAttn_FrOper_2,L,cortex,scale122
+26,27,7Networks_LH_SalVentAttn_PFCl_1,L,cortex,scale122
+27,28,7Networks_LH_SalVentAttn_Med_1,L,cortex,scale122
+28,29,7Networks_LH_SalVentAttn_Med_2,L,cortex,scale122
+29,30,7Networks_LH_SalVentAttn_Med_3,L,cortex,scale122
+30,31,7Networks_LH_Limbic_OFC_1,L,cortex,scale122
+31,32,7Networks_LH_Limbic_TempPole_1,L,cortex,scale122
+32,33,7Networks_LH_Limbic_TempPole_2,L,cortex,scale122
+33,34,7Networks_LH_Cont_Par_1,L,cortex,scale122
+34,35,7Networks_LH_Cont_PFCl_1,L,cortex,scale122
+35,36,7Networks_LH_Cont_pCun_1,L,cortex,scale122
+36,37,7Networks_LH_Cont_Cing_1,L,cortex,scale122
+37,38,7Networks_LH_Default_Temp_1,L,cortex,scale122
+38,39,7Networks_LH_Default_Temp_2,L,cortex,scale122
+39,40,7Networks_LH_Default_Temp_3,L,cortex,scale122
+40,41,7Networks_LH_Default_Temp_4,L,cortex,scale122
+41,42,7Networks_LH_Default_PFC_1,L,cortex,scale122
+42,43,7Networks_LH_Default_PFC_2,L,cortex,scale122
+43,44,7Networks_LH_Default_PFC_3,L,cortex,scale122
+44,45,7Networks_LH_Default_PFC_4,L,cortex,scale122
+45,46,7Networks_LH_Default_PFC_5,L,cortex,scale122
+46,47,7Networks_LH_Default_PFC_6,L,cortex,scale122
+47,48,7Networks_LH_Default_PFC_7,L,cortex,scale122
+48,49,7Networks_LH_Default_PCC_1,L,cortex,scale122
+49,50,7Networks_LH_Default_PCC_2,L,cortex,scale122
+50,51,7Networks_RH_Vis_1,R,cortex,scale122
+51,52,7Networks_RH_Vis_2,R,cortex,scale122
+52,53,7Networks_RH_Vis_3,R,cortex,scale122
+53,54,7Networks_RH_Vis_4,R,cortex,scale122
+54,55,7Networks_RH_Vis_5,R,cortex,scale122
+55,56,7Networks_RH_Vis_6,R,cortex,scale122
+56,57,7Networks_RH_Vis_7,R,cortex,scale122
+57,58,7Networks_RH_Vis_8,R,cortex,scale122
+58,59,7Networks_RH_SomMot_1,R,cortex,scale122
+59,60,7Networks_RH_SomMot_2,R,cortex,scale122
+60,61,7Networks_RH_SomMot_3,R,cortex,scale122
+61,62,7Networks_RH_SomMot_4,R,cortex,scale122
+62,63,7Networks_RH_SomMot_5,R,cortex,scale122
+63,64,7Networks_RH_SomMot_6,R,cortex,scale122
+64,65,7Networks_RH_SomMot_7,R,cortex,scale122
+65,66,7Networks_RH_SomMot_8,R,cortex,scale122
+66,67,7Networks_RH_DorsAttn_Post_1,R,cortex,scale122
+67,68,7Networks_RH_DorsAttn_Post_2,R,cortex,scale122
+68,69,7Networks_RH_DorsAttn_Post_3,R,cortex,scale122
+69,70,7Networks_RH_DorsAttn_Post_4,R,cortex,scale122
+70,71,7Networks_RH_DorsAttn_Post_5,R,cortex,scale122
+71,72,7Networks_RH_DorsAttn_FEF_1,R,cortex,scale122
+72,73,7Networks_RH_DorsAttn_FEF_2,R,cortex,scale122
+73,74,7Networks_RH_SalVentAttn_TempOccPar_1,R,cortex,scale122
+74,75,7Networks_RH_SalVentAttn_TempOccPar_2,R,cortex,scale122
+75,76,7Networks_RH_SalVentAttn_FrOper_1,R,cortex,scale122
+76,77,7Networks_RH_SalVentAttn_Med_1,R,cortex,scale122
+77,78,7Networks_RH_SalVentAttn_Med_2,R,cortex,scale122
+78,79,7Networks_RH_Limbic_OFC_1,R,cortex,scale122
+79,80,7Networks_RH_Limbic_TempPole_1,R,cortex,scale122
+80,81,7Networks_RH_Cont_Par_1,R,cortex,scale122
+81,82,7Networks_RH_Cont_Par_2,R,cortex,scale122
+82,83,7Networks_RH_Cont_PFCl_1,R,cortex,scale122
+83,84,7Networks_RH_Cont_PFCl_2,R,cortex,scale122
+84,85,7Networks_RH_Cont_PFCl_3,R,cortex,scale122
+85,86,7Networks_RH_Cont_PFCl_4,R,cortex,scale122
+86,87,7Networks_RH_Cont_PFCmp_1,R,cortex,scale122
+87,88,7Networks_RH_Cont_PFCmp_2,R,cortex,scale122
+88,89,7Networks_RH_Cont_PFCmp_3,R,cortex,scale122
+89,90,7Networks_RH_Default_Par_1,R,cortex,scale122
+90,91,7Networks_RH_Default_Temp_1,R,cortex,scale122
+91,92,7Networks_RH_Default_Temp_2,R,cortex,scale122
+92,93,7Networks_RH_Default_Temp_3,R,cortex,scale122
+93,94,7Networks_RH_Default_PFCv_1,R,cortex,scale122
+94,95,7Networks_RH_Default_PFCv_2,R,cortex,scale122
+95,96,7Networks_RH_Default_PFCm_1,R,cortex,scale122
+96,97,7Networks_RH_Default_PFCm_2,R,cortex,scale122
+97,98,7Networks_RH_Default_PFCm_3,R,cortex,scale122
+98,99,7Networks_RH_Default_PCC_1,R,cortex,scale122
+99,100,7Networks_RH_Default_PCC_2,R,cortex,scale122
+100,101,Left red nucleus,L,subcortex,scale122
+101,102,Right red nucleus,R,subcortex,scale122
+102,103,Left substantia nigra,L,subcortex,scale122
+103,104,Right substantia nigra,R,subcortex,scale122
+104,105,Left subthalamic nucleus,L,subcortex,scale122
+105,106,Right subthalamic nucleus,R,subcortex,scale122
+106,107,Left caudate,L,subcortex,scale122
+107,108,Right caudate,R,subcortex,scale122
+108,109,Left putamen,L,subcortex,scale122
+109,110,Right putamen,R,subcortex,scale122
+110,111,Left globus pallidus externa,L,subcortex,scale122
+111,112,Right globus pallidus externa,R,subcortex,scale122
+112,113,Left globus pallidus interna,L,subcortex,scale122
+113,114,Right globus pallidus interna,R,subcortex,scale122
+114,115,Left thalamus,L,subcortex,scale122
+115,116,Right thalamus,R,subcortex,scale122
+116,117,Left hippocampus,L,subcortex,scale122
+117,118,Right hippocampus,R,subcortex,scale122
+118,119,Left nucleus accumbens,L,subcortex,scale122
+119,120,Right nucleus accumbens,R,subcortex,scale122
+120,121,Left amygdala,L,subcortex,scale122
+121,122,Right amygdala,R,subcortex,scale122
