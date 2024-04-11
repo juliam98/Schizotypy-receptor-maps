@@ -8,10 +8,6 @@ Six publically-available receptor density/ molecular atlases were used to correl
 ### The receptor/ molecular maps used in the analysis are:
 | Receptor | Reference    | Radiotracer                |
 |----------|--------------|----------------------------|
-| DAT      | dukart2018   | [<sup>123</sup>I]-FP-CIT   |
-| D2       | jaworska2020 | [<sup>18</sup>F]fallypride |
-| D1       | kaller2017   | [<sup>11</sup>C]-SCH 23390 |
-| FDOPA    | gomez        | [<sup>18</sup>F]-fluorodopa|
 | GABAa    | norgaard2021 | [<sup>11</sup>C]flumazenil |
 | GABAa5   | lukow2022    | [<sup>11</sup>C]Ro15-4513  |
 | mGluR5   | smart2019    | [<sup>11</sup>C]ABP688     |
@@ -31,6 +27,7 @@ Six publically-available receptor density/ molecular atlases were used to correl
 toolbox. <br>
 3. Correlate each parcellated CBF map with all parcellated receptor/molecular atlas using spearman's correlation and using the null models.
 4. Correct for multiple comparisons.
+5. Do Cook's distance analysis.
 
 ## Results
 View results [here](5_results#results_section).
