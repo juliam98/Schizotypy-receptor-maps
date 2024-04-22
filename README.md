@@ -27,7 +27,7 @@ Six publically-available receptor density/ molecular atlases were used to correl
 toolbox. <br>
 3. Correlate each parcellated CBF map with all parcellated receptor/molecular atlas using spearman's correlation and using the null models.
 4. Correct for multiple comparisons.
-5. Do Cook's distance analysis.
+5. Do Cook's distance analysis to identify influential regions.
 
 ## Results
 View results [here](5_results#results_section).
